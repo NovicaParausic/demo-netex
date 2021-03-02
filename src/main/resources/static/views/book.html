@@ -1,0 +1,23 @@
+<h1>Book</h1>
+
+
+<button class="btn btn-primary" type="button" ng-csv="addressBook" csv-header="myHeaderData" filename="test.csv">Export to CSV</button>
+<button class="btn btn-primary" type="button" ng-click = "bc.editContact()">New Contact</button>
+</br>
+</br>
+<input type="text" id="lname" name="lname" pattern="[a-zA-Z0-9\s]+" ng-model="name"><br><br>
+<button class="btn btn-lg btn-success" type="submit" ng-click="bc.searchContact()">Search contact</button>
+</br>
+</br>
+<table class="table">
+	<tr>
+		<th>Name</th>
+		<th>Address</th>		
+	</tr>
+	<tr ng-repeat="contact in addressBook">
+		<td>{{contact.name}}</td>
+		<td>{{contact.address}}</td>		
+		<td><button type="button" class="btn btn-primary" ng-click="bc.editContact(contact.id)">Edit</button>
+		<td><button class="btn btn-danger" ng-click="bc.deleteFromBook(contact.id)">Delete</button>
+	</tr>
+</table>

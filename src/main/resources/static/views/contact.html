@@ -1,0 +1,40 @@
+<h1 ng-show="contactName">Edit Contact</h1>
+<h1 ng-hide="contactName">Save Contact</h1>
+</br>
+</br>
+<button class="btn btn-lg btn-success" type="submit" ng-click="cc.goToBook()">Address book</button>
+</br>
+</br>
+<form>
+  	<label for="fname">Name:</label><br>
+  	<input type="text" id="fname" name="fname" pattern="[a-zA-Z0-9\s]+" ng-model="name" required><br>
+  	<label for="lname">Address:</label><br>
+  	<input type="text" id="lname" name="lname" pattern="[a-zA-Z0-9\s]+" ng-model="address"><br><br>
+  	<button class="btn btn-lg btn-primary" type="submit" ng-show="contactName" ng-click="cc.editContact()">Edit contact</button>
+	<button class="btn btn-lg btn-primary" type="submit" ng-hide="contactName"ng-click="cc.uploadPhoto()">Save contact</button>
+</form> 
+</br>
+</br>
+<img class="thumb" ng-src="{{stepsModel}}" />
+    
+<input class="btn btn-primary" type='file' ng-model-instant onchange="angular.element(this).scope().imageUpload(event)" />
+</br>
+</br>
+
+
+<!--<div class="container row">
+    <div class="col-md-6">
+        <input type="file" (change)="onFileChanged($event)">
+    </div>
+    </br>
+    <div class="col-md-6">
+        <input type="button" (click)="onUpload()" value="upload">
+    </div>
+</div>-->
+
+
+</br>
+</br>
+
+
+    
